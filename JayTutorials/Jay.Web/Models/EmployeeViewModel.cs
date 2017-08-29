@@ -97,10 +97,10 @@ namespace Jay.Web.Models
             }
         }
 
-        public Employee ParseToViewModel()
+        public Employee ParseToViewModel(List<Employee> emp)
         {
-            
-            var employees = new Employee()
+           
+            var employee = new Employee()
             {
 
                 Firstname = this.Firstname,
@@ -113,13 +113,11 @@ namespace Jay.Web.Models
 
             };
 
-            return employees;
+
+            return employee;
 
         }
 
-        internal object ParseToViewModel(List<Employee> list)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }
