@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JayTutorials", "JayTutorials\JayTutorials.csproj", "{2F027269-58C2-43CB-A2CA-0566EC2D7B4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicCRUD", "..\..\BasicCRUD\BasicCRUD\BasicCRUD.csproj", "{3FEFFB73-7D92-44AD-A019-80456CC8A96D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicCRUD", "BasicCRUD\BasicCRUD.csproj", "{3FEFFB73-7D92-44AD-A019-80456CC8A96D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
