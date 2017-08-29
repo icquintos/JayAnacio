@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using Jay.Manager;
+
 
 namespace Jay.Web.Models
 {
@@ -67,5 +69,57 @@ namespace Jay.Web.Models
 
             return employee;
         }   
+    }
+
+    public class IndexEmployeeViewmodel
+    {
+        
+        public string Firstname { get; set; }
+
+        public string Middlename { get; set; }
+    
+        public string Lastname { get; set; }
+
+        public string Gender { get; set; }
+
+        public DateTime Birthdate { get; set; }
+
+        private int _age
+        {
+            get
+            {
+                var today = DateTime.Today;
+                var age = today.Year - Birthdate.Year;
+
+                return Birthdate > today.AddYears(-age)
+                    ? age - 1
+                    : age;
+            }
+        }
+
+        public Employee ParseToViewModel()
+        {
+            
+            var employees = new Employee()
+            {
+
+                Firstname = this.Firstname,
+                Middlename = this.Middlename,
+                Lastname = this.Lastname,
+                Gender = this.Gender,
+                Birthdate = this.Birthdate,
+                Age = this._age,
+                DateOfHire = DateTime.Now
+
+            };
+
+            return employees;
+
+        }
+
+        internal object ParseToViewModel(List<Employee> list)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

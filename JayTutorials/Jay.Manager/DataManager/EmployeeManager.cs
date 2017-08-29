@@ -36,7 +36,7 @@ namespace Jay.Manager.DataManager
             }
         }
 
-        public List<Employee> GetAllEmployees(long employeeId)
+        public List<Employee> GetAllEmployees()
         {
             using (var data = new MyDbContext())
             {

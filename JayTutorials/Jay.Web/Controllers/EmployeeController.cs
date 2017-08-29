@@ -15,7 +15,14 @@ namespace Jay.Web.Controllers
         // GET: Employee
         public ActionResult Index()
         {
-            return View();
+
+            var viewModel = new IndexEmployeeViewmodel();
+            
+
+            return View(viewModel.ParseToViewModel(_employeeManager.GetAllEmployees()));
+
+
+
         }
 
         public ActionResult AddEmployee()
@@ -46,5 +53,7 @@ namespace Jay.Web.Controllers
 
             return View(model);
         }
+
+
     }
 }
