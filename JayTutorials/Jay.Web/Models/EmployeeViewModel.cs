@@ -73,7 +73,12 @@ namespace Jay.Web.Models
 
     public class IndexEmployeeViewmodel
     {
-        
+
+        public IndexEmployeeViewmodel(Employee emp)
+        {
+            ParseToViewModel(emp);
+        }
+
         public string Firstname { get; set; }
 
         public string Middlename { get; set; }
@@ -97,25 +102,33 @@ namespace Jay.Web.Models
             }
         }
 
-        public Employee ParseToViewModel(List<Employee> emp)
+        //public Employee ParseToViewModel(List<Employee> emp)
+        //{
+        //    var employee = new Employee()
+        //    {
+
+        //        Firstname = this.Firstname,
+        //        Middlename = this.Middlename,
+        //        Lastname = this.Lastname,
+        //        Gender = this.Gender,
+        //        Birthdate = this.Birthdate,
+        //        Age = this._age,
+        //        DateOfHire = DateTime.Now
+
+        //    };
+
+
+        //    return employee;
+
+        //}
+
+        public void ParseToViewModel(Employee emp)
         {
-           
-            var employee = new Employee()
-            {
-
-                Firstname = this.Firstname,
-                Middlename = this.Middlename,
-                Lastname = this.Lastname,
-                Gender = this.Gender,
-                Birthdate = this.Birthdate,
-                Age = this._age,
-                DateOfHire = DateTime.Now
-
-            };
-
-
-            return employee;
-
+            Firstname = emp.Firstname;
+            Middlename = emp.Middlename;
+            Lastname = emp.Lastname;
+            Gender = emp.Gender;
+            Birthdate = emp.Birthdate;
         }
 
 

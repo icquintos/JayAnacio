@@ -15,14 +15,16 @@ namespace Jay.Web.Controllers
         // GET: Employee
         public ActionResult Index()
         {
-            var data = _employeeManager.GetAllEmployees().ToList();
-            var viewModel = new IndexEmployeeViewmodel();
-            var newEmployee = viewModel.ParseToViewModel(data);
+            var viewModel = new List<IndexEmployeeViewmodel>();
 
-            return View(data);
+            var data = _employeeManager.GetAllEmployees();
 
+            data.ForEach(x =>
+            {
+                viewModel.Add(new IndexEmployeeViewmodel(x));
+            });
 
-
+            return View(viewModel);
         }
 
         public ActionResult AddEmployee()

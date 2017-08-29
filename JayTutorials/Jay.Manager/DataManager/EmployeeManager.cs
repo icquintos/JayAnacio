@@ -41,7 +41,6 @@ namespace Jay.Manager.DataManager
             using (var data = new MyDbContext())
             {
                 return data.Employees.ToList();
-                //return data.Employees.Where(x => x.Firstname == "").ToList();
             }
         }
     }
